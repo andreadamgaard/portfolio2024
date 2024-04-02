@@ -1,0 +1,54 @@
+---
+
+---
+
+<footer>
+  <section>
+    <article>
+      <h1>Studie</h1>
+      <div>
+        <p class="font-bold pr-3">KEA</p>
+        <p>Multimediedesign</p>
+      </div>
+      <div>
+        <p class="font-bold pr-3">Frontend</p>
+        <p>3. semester</p>
+      </div>
+    </article>
+    <article>
+      <h1>Kontakt</h1>
+      <div>
+        <p class="font-bold pr-3">E-mail</p>
+        <a href="mailto:damgaardhegner@gmail.com">damgaardhegner@gmail.com</a>
+      </div>
+      <div>
+        <p class="font-bold pr-3">Telefon</p>
+        <p>+45 51 28 87 47</p>
+      </div>
+    </article>
+  </section>
+</footer>
+
+<style>
+  section {
+    display: flex;
+    justify-content: space-between;
+    padding: 6% 4% 2% 4%;
+    color: var(--color-text-first);
+    h1 {
+      color: var(--color-text-first);
+    }
+    div {
+      display: flex;
+      /* gap: 1rem; */
+    }
+  }
+
+  @media (max-width: 800px) {
+    div {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+  }
+</style>

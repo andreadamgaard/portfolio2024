@@ -1,0 +1,54 @@
+@import "./reset.css" layer(reset);
+@font-face {
+  font-family: "eurostile";
+  src: url("../../public/fonts/eurostileltstd-demioblique_0-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "miedinger";
+  src: url("../../public/fonts/miedinger_w01_bold-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  /*Fonts*/
+  --copy-fonts: "Lato", sans-serif;
+  --header-font: "miedinger";
+
+  /*Font colors*/
+  --color-text-first: #00be0c;
+  --color-text-second: #ff458f;
+
+  /*BG colors*/
+
+  /*Colors*/
+  --burger-color: #00be0d5c;
+
+  --content-width: 75rem;
+}
+
+body {
+  background-image: url(../images/bg_dark.png);
+  background-size: cover;
+  background-attachment: fixed;
+  font-family: var(--copy-fonts);
+  color: #f0f0f0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: var(--header-font);
+  color: transparent;
+}
+
+@media (max-width: 800px) {
+  body {
+    background-image: url(../images/bg_dark_mobil.png);
+  }
+}

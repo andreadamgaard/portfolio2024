@@ -1,0 +1,75 @@
+---
+
+---
+
+<section>
+  <div class="port">
+    <h1 class="port2">Portfolie</h1>
+  </div>
+  <div>
+    <div class="name">
+      <h2 class="a">ANDREA</h2>
+      <h2 class="d">DAMGAARD</h2>
+      <h2 class="h">HEGNER</h2>
+    </div>
+    <!-- <figure>
+      <img src="../../public/img/Andrea1.webp" alt="" />
+    </figure> -->
+  </div>
+</section>
+
+<style>
+  section {
+    display: grid;
+    justify-content: center;
+    h1 {
+      font-size: 2.5rem;
+      -webkit-text-stroke: 2.5px var(--color-text-first);
+      padding: 8% 0% 78% 0%;
+    }
+    .name {
+      h2 {
+        font-size: 2.2rem;
+        -webkit-text-stroke: 2.5px var(--color-text-first);
+      }
+      .a {
+        margin: 10% 0% -1.5% 3%;
+      }
+      .d {
+        margin: 0% 0% -1.5% 6.8%;
+      }
+      .h {
+        margin: 0% 0% 15% 17%;
+      }
+    }
+  }
+
+  @media (min-width: 810px) {
+    section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      justify-items: center;
+      .port {
+        grid-column: 1 / span 2;
+        .port2 {
+          font-size: 8rem;
+          padding: 3% 0% 0% 0%;
+          -webkit-text-stroke: 4px var(--color-text-first);
+        }
+      }
+    }
+    .name {
+      grid-column: 1;
+      grid-row: 2;
+      padding-left: 21%;
+
+      h2 {
+        font-size: 4rem !important;
+        -webkit-text-stroke: 3.5px var(--color-text-first);
+      }
+      .h {
+        margin: 0% 0% 0% 17% !important;
+      }
+    }
+  }
+</style>

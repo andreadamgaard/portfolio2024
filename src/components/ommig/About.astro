@@ -1,0 +1,31 @@
+---
+import AboutImg from "./AboutImg.astro";
+import OmMigSection from "./OmMigSection.astro";
+import Skills from "./Skills.astro";
+---
+
+<section>
+  <div class="first-section">
+    <AboutImg />
+    <OmMigSection />
+  </div>
+  <Skills />
+</section>
+
+<style>
+  section {
+    padding: 2rem;
+    h1 {
+      color: var(--color-text-first);
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      color: var(--color-text-first);
+    }
+    .first-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+</style>
