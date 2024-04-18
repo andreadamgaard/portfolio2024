@@ -13,10 +13,18 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "gt_america";
+  src: url("../../public/fonts/gt-america-compressed-bold-trial-webfont.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
 :root {
   /*Fonts*/
   --copy-fonts: "Lato", sans-serif;
   --header-font: "miedinger";
+  --header-two: "gt_america";
 
   /*Font colors*/
   --color-text-first: #00be0c;
@@ -31,11 +39,12 @@
 }
 
 body {
-  background-image: url(../images/bg_dark.png);
+  background-image: url(../assets/bg_light.png);
   background-size: cover;
   background-attachment: fixed;
   font-family: var(--copy-fonts);
-  color: #f0f0f0;
+  font-size: 1.3rem;
+  color: #191919;
 }
 
 h1,
@@ -43,12 +52,12 @@ h2,
 h3,
 h4,
 h5 {
-  font-family: var(--header-font);
+  font-family: var(--header-two);
   color: transparent;
 }
 
 @media (max-width: 800px) {
   body {
-    background-image: url(../images/bg_dark_mobil.png);
+    background-image: url(../assets/bg_light_mobil.png);
   }
 }

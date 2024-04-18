@@ -11,7 +11,7 @@
         <p>Multimediedesign</p>
       </div>
       <div>
-        <p class="font-bold pr-3">Frontend</p>
+        <p class="font-bold pr-3">Frontend design</p>
         <p>3. semester</p>
       </div>
     </article>
@@ -33,10 +33,11 @@
   section {
     display: flex;
     justify-content: space-between;
-    padding: 6% 4% 2% 4%;
+    padding: 3% 4% 2% 4%;
     color: var(--color-text-first);
     h1 {
       color: var(--color-text-first);
+      font-size: 1.8rem;
     }
     div {
       display: flex;
@@ -44,11 +45,14 @@
     }
   }
 
-  @media (max-width: 800px) {
-    div {
-      display: flex;
+  @media (width < 800px) {
+    section {
       flex-direction: column;
-      gap: 0;
+      gap: 2rem;
+      padding-left: 2rem;
+      p {
+        font-size: 1rem;
+      }
     }
   }
 </style>

@@ -6,26 +6,38 @@ import Skills from "./Skills.astro";
 
 <section>
   <div class="first-section">
-    <AboutImg />
-    <OmMigSection />
+    <div class="imgs"><AboutImg /></div>
+    <div class="textsection"><OmMigSection /></div>
   </div>
-  <Skills />
+  <div class="second-section">
+    <Skills />
+  </div>
 </section>
 
 <style>
   section {
     padding: 2rem;
-    h1 {
-      color: var(--color-text-first);
-    }
-
-    h2 {
-      font-size: 1.3rem;
-      color: var(--color-text-first);
-    }
     .first-section {
       display: grid;
       grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+    }
+    .second-section {
+      display: grid;
+      justify-content: center;
+    }
+  }
+  @media (width < 1000px) {
+    section {
+      .first-section {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+      }
+      .second-section {
+        display: flex;
+        flex-direction: column;
+      }
     }
   }
 </style>

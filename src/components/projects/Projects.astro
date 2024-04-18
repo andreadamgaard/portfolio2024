@@ -1,0 +1,139 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+const { imagePath, imagePath1, imagePath2, imagePath3, imagePath4, altText } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*.{jpeg,jpg,png,gif}");
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
+---
+
+<section>
+  <h1 class="pb-8">Mine tidligere projekter</h1>
+  <div class="project-img p-4">
+    <div>
+        <article>
+            <p>1. Semester</p>
+            <p>Animation theme</p>
+        </article>
+        <Image src={images[imagePath]()} alt={altText} />
+        <h2>Girls girl game</h2>
+        <p>html, css, js, XD, AI, github, ideeudvikling og karakterdesign</p>
+        <p class="w-4">2023</p>
+    </div>
+    <hr>
+    <div>
+        <article>
+            <p>2. Semester</p>
+            <p>Eksamens opgave</p>
+        </article>
+        <Image src={images[imagePath1]()} alt={altText} />
+        <h2>Anden semester eksamen</h2>
+        <p>Astro, html, css, js, AI, PS, Figma, Github, photo & video production</p>
+        <p>2023</p>
+    </div>
+    <hr>
+    <div>
+        <article>
+            <p>2. Semester</p>
+            <p>Redesign</p>
+            <p>UX Copenhagen</p>
+        </article>
+        <Image src={images[imagePath3]()} alt={altText} />
+        <h2>Redesign UX Copenhagen</h2>
+        <p>Astro, html, css, js, Figma, Github, Supabase</p>
+        <p>2023</p>
+    </div>
+    <hr>
+     <div>
+        <article>
+            <p>The Arrangement</p>
+            <p>Universal Music</p>
+            <p>KALASET musikvideo</p>
+        </article>
+        <Image src={images[imagePath2]()} alt={altText} />
+        <h2>Executive<br/>producer</h2>
+        <p>Projektstyring, koncept- og ideeudvikling, torvholder mellem UMS og band</p>
+        <p>2022</p>
+    </div>
+    <hr>
+    <div>
+        <article>
+            <p>The Arrangement</p>
+            <p>Ben & Tan musikvideo</p>
+
+        </article>
+        <Image src={images[imagePath4]()} alt={altText} />
+        <h2>Executive<br/>producer</h2>
+        <p>Projektstyring, koncept- og ideeudvikling, PR i forbindelse med release</p>
+        <p>2021</p>
+    </div>
+  </div>
+</section>
+
+<style>
+    section{
+    h1 {
+        font-size: 7.5rem;
+        -webkit-text-stroke: 4px var(--color-text-first);
+        text-align: center;
+      }
+      p{
+        font-size: 1rem;
+      }
+
+    h2 {
+      font-size: 2.3rem;
+      color: var(--color-text-first);
+    }
+    hr{
+          border: 0.2px solid var(--color-text-first);
+    }
+      .project-img{
+        display: grid;
+        gap: 2rem;
+        div{
+            display: grid;
+            align-items: center;
+            grid-template-columns: 1fr 2fr 1fr 2fr 1fr;
+            gap: 1rem;
+        article{
+            padding-left: 1.5rem;
+        }
+
+        img{
+            max-width: 400px;
+            object-fit: cover;
+            max-height: 552px;
+            border-radius: 1rem;
+        }
+        }
+        
+      }
+    }
+      @media (width < 800px) {
+        section{
+    h1 {
+        -webkit-text-stroke: 1.5px var(--color-text-first);
+        font-size: 1.6rem;
+      }
+
+      .project-img{
+
+        div{
+            grid-template-columns: 1fr;
+            padding-left: 1rem; 
+        img{
+            max-width: 300px;
+        }
+        article{
+            padding-left: 0;
+            :first-child{
+                font-weight: bold;
+            }
+        }
+
+        }
+      }
+    }
+      }
+</style>
