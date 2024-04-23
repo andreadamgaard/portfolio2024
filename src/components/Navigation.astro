@@ -1,11 +1,16 @@
 ---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
+const { imagePath, altText } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*.{jpeg,jpg,png,gif}");
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <header class="sticky">
   <div class="logo">
     <a href="/">
-      <img src="../../public/img/a_logo.webp" alt="logo" />
+      <Image src={images[imagePath]()} alt={altText} />
     </a>
   </div>
   <nav>

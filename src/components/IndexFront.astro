@@ -1,5 +1,10 @@
 ---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
 
+const { imagePath, altText } = Astro.props;
+const images = import.meta.glob<{ default: ImageMetadata }>("/src/assets/*.{jpeg,jpg,png,gif}");
+if (!images[imagePath]) throw new Error(`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`);
 ---
 
 <section>
@@ -10,7 +15,9 @@
     <h2 class="p">Er jeg jeres nye praktikant <span>?</span></h2>
   </div>
   <figure>
-    <img src="../../public/img/Andrea1.webp" alt="" />
+    <Image src={images[imagePath]()} alt={altText} />
+
+    <!-- <img src="../../public/img/Andrea1.webp" alt="" /> -->
   </figure>
 </section>
 
